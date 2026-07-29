@@ -1,5 +1,11 @@
 # 🔐 Centralized Secret Management System using AWS Secrets Manager and IAM Roles
 
+![AWS](https://img.shields.io/badge/AWS-Secrets%20Manager-orange)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![IAM](https://img.shields.io/badge/AWS-IAM-yellow)
+![DevSecOps](https://img.shields.io/badge/DevSecOps-Project-green)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
 ## 📌 Table of Contents
 
 * Introduction
@@ -20,12 +26,15 @@
 * Learning Outcomes
 * Conclusion
 
+---
+
 # 📖 Introduction
 
 Applications often require sensitive information such as database usernames, passwords, API keys, and authentication tokens. Storing these secrets directly in source code or configuration files is a major security risk.
 
 This project demonstrates a secure method of managing application secrets using **AWS Secrets Manager** and **IAM Roles**. Instead of hardcoding credentials, the application retrieves them dynamically at runtime using the AWS SDK (Boto3).
 
+---
 
 # 🚨 Problem Statement
 
@@ -123,6 +132,8 @@ The EC2 instance authenticates using an IAM Role and retrieves secrets securely 
 * Support for secret rotation
 * Production-ready security approach
 
+---
+
 # 📁 Project Structure
 
 ```text
@@ -151,6 +162,8 @@ centralized-secret-management-system/
 └── LICENSE
 ```
 
+---
+
 # ✅ Prerequisites
 
 * AWS Account
@@ -161,6 +174,7 @@ centralized-secret-management-system/
 * AWS Secrets Manager
 * Internet Connectivity
 
+---
 
 # ⚙ Implementation Steps
 
@@ -197,6 +211,9 @@ Secret Value:
   "password": "StrongPassword123"
 }
 ```
+
+---
+
 ## Step 4 — Configure IAM
 
 Create an IAM policy allowing only:
@@ -243,7 +260,10 @@ Verify:
         }
     ]
 }
-'''
+```
+
+---
+
 # 🔄 Application Workflow
 
 ```text
@@ -266,6 +286,9 @@ Connect to Database
         │
         ▼
 Application Runs Successfully
+```
+
+---
 
 # 🔒 Security Improvements
 
@@ -277,6 +300,8 @@ Application Runs Successfully
 | Static Credentials           | IAM Role Authentication    |
 | Difficult Password Rotation  | Automatic Rotation Support |
 
+---
+
 # ✔ Security Validation
 
 * Successfully retrieved secrets using AWS SDK.
@@ -284,6 +309,8 @@ Application Runs Successfully
 * IAM Role used for authentication.
 * Database credentials removed from application code.
 * Least privilege IAM policy implemented.
+
+---
 
 # 📸 Screenshots
 
@@ -299,6 +326,8 @@ Include screenshots of:
 * Secret Retrieval
 * AWS STS Verification
 
+---
+
 # 🚀 Future Enhancements
 
 * Enable automatic secret rotation.
@@ -307,6 +336,8 @@ Include screenshots of:
 * Automate deployment using Jenkins.
 * Add CloudWatch monitoring.
 * Implement CloudTrail auditing.
+
+---
 
 # 📚 Learning Outcomes
 
@@ -318,6 +349,8 @@ Include screenshots of:
 * DevSecOps Best Practices
 * Least Privilege Principle
 * Cloud Security Fundamentals
+
+---
 
 # 🎯 Conclusion
 
