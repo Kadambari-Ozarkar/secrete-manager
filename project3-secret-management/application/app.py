@@ -1,20 +1,28 @@
 import boto3
 import json
-import mysql.connector
 
-secret_name = "project3/database-credentials"
-region = "ap-south-1"
+SECRET_NAME = "project3/db-credentials"
+REGION_NAME = "us-east-1"
 
-client = boto3.client("secretsmanager", region_name=region)
-
-response = client.get_secret_value(SecretId=secret_name)
-
-secret = json.loads(response["SecretString"])
-
-db = mysql.connector.connect(
-    host=secret["host"],
-    user=secret["username"],
-    password=secret["password"]
+# Create Secrets Manager client
+client = boto3.client(
+    "secretsmanager",
+    region_name=REGION_NAME
 )
 
-print("Database connected successfully!")
+# Retrieve secret
+response = client.get_secret_value(
+    SecretId=SECRET_NAME
+)
+
+# Convert secret JSON into Python dictionary
+secret = json.loads(response["SecretString"])
+
+DB_USERNAME = secret["username"]
+DB_PASSWORD = secret["password"]
+
+print("=== Secure Application Configuration ===")
+print(f"Database Username: {DB_USERNAME}")
+print("Database Password: [RETRIEVED SECURELY]")
+
+print("\nApplication started successfully!")
