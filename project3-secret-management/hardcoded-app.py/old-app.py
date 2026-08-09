@@ -1,15 +1,10 @@
-import mysql.connector
+import os
 
-DB_HOST = "your-database-host"
-DB_USER = "admin"
-DB_PASSWORD = "MyPassword123"
-DB_NAME = "applicationdb"
+DB_USERNAME = "admin"
+DB_PASSWORD = "MySecretPassword123"
 
-connection = mysql.connector.connect(
-    host=DB_HOST,
-    user=DB_USER,
-    password=DB_PASSWORD,
-    database=DB_NAME
-)
+print("=== Application Configuration ===")
+print(f"Database Username: {DB_USERNAME}")
+print(f"Database Password: {DB_PASSWORD}")
 
-print("Database connection successful!")
+print("\nApplication started successfully!")
